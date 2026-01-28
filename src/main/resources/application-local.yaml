@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: chat-bff
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: zulip
+            client-secret: GS3aPWfTqNJ7sT8ONhscmzCR9jPmgBf2
+            scope: openid,profile,email
+            authorization-grant-type: password
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/infra
+            authorization-uri: http://localhost:8080/realms/infra/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/realms/infra/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/realms/infra/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/infra/protocol/openid-connect/certs
+
